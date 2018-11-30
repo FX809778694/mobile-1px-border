@@ -1,0 +1,146 @@
+
+/**
+ * [border 边框1px适配]
+ * @param  {[type]} $color  [边框颜色]
+ */
+@mixin border-t ($color) {
+  position: relative;
+  border:none;
+  &:before{
+    content: " ";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    border-top: 1px solid $color;
+    right: 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+}
+@mixin border-r ($color) {
+  position: relative;
+  border:none;
+  &:after{
+    content: " ";
+    width: 1px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    border-right: 1px solid $color;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+}
+@mixin border-b ($color) {
+  position: relative;
+  border:none;
+  &:after{
+    content: " ";
+    height: 1px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    border-bottom: 1px solid $color;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+  }
+}
+@mixin border-l ($color) {
+  position: relative;
+  border:none;
+  &:before{
+    content: " ";
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    border-left: 1px solid $color;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+}
+@mixin border-all ($color) {
+  position: relative;
+  &:before{
+    -webkit-transform: scale(.5);
+    -webkit-transform-origin: left top;
+    border: 1px solid $color;
+    content: " ";
+    height: 200%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(.5);
+    transform-origin: left top;
+    width: 200%;
+  }
+}
+@mixin border-tb ($color) {
+  position: relative;
+  &:before{
+    content: " ";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    -webkit-transform: scaleY(.5);
+    -webkit-transform-origin: 0 0;
+    border-top: 1px solid $color;
+    top: 0;
+    transform: scaleY(.5);
+    transform-origin: 0 0;
+  }
+  &:after{
+    content: " ";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    -webkit-transform: scaleY(.5);
+    -webkit-transform-origin: 0 100%;
+    border-bottom: 1px solid $color;
+    bottom: 0;
+    transform: scaleY(.5);
+    transform-origin: 0 100%;
+  }
+}
+@mixin border-lr ($color) {
+  position: relative;
+  &:before{
+    content: " ";
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    border-left: 1px solid $color;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  &:after{
+    content: " ";
+    width: 1px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    border-right: 1px solid $color;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+}
